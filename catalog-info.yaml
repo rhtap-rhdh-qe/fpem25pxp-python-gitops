@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: fpem25pxp-python-gitops
+  description: This is GitOps manifest for fpem25pxp-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=fpem25pxp-python
+    backstage.io/kubernetes-id: fpem25pxp-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: fpem25pxp-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:fpem25pxp-python
